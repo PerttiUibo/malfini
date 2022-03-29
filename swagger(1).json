@@ -1,0 +1,5364 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Eshop",
+    "description": "\r\nAPI Support Contact: b2bsupport@malfini.com\r\n\r\nFor more contacts, visit www.malfini.com, section Contacts.\r\n\r\nTo authorize in auth or api-auth login functions, use the username and password from the www.malfini.com e-shop. It is recommended to use the Main Account / User Details section in the e-shop to create a new dedicated account for the purpose of accessing the API.",
+    "version": "v4"
+  },
+  "paths": {
+    "/api/v{ver}/address": {
+      "get": {
+        "tags": [
+          "address"
+        ],
+        "summary": "List addresses.",
+        "description": "Returns the list of your company's addresses.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of addresses if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddressListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddressListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddressListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddressListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "address"
+        ],
+        "summary": "List addresses.",
+        "description": "Returns the list of your company's addresses.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of addresses if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddressListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddressListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddressListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddressListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "address"
+        ],
+        "summary": "Address Creation",
+        "description": "Creates a new address and returns it back.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "AddressCreateUpdateModel",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreateUpdateModel"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreateUpdateModel"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreateUpdateModel"
+              }
+            },
+            "application/x-protobuf": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreateUpdateModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressListModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressListModel"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressListModel"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressListModel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "HTTP 201 and newly created address object if OK."
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      }
+    },
+    "/api/v{ver}/address/{id}": {
+      "put": {
+        "tags": [
+          "address"
+        ],
+        "summary": "Address Update",
+        "description": "Edits the desired address and returns the updated model.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the updating address.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "Id of the updating address.",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "AddressCreateUpdateModel",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreateUpdateModel"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreateUpdateModel"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreateUpdateModel"
+              }
+            },
+            "application/x-protobuf": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressCreateUpdateModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and updated address object if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressListModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressListModel"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressListModel"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressListModel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      }
+    },
+    "/api/v{ver}/api-auth/refresh": {
+      "post": {
+        "tags": [
+          "api-auth"
+        ],
+        "operationId": "Bearer-AuthRefresh",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            },
+            "application/x-protobuf": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{ver}/api-auth/login": {
+      "post": {
+        "tags": [
+          "api-auth"
+        ],
+        "operationId": "Bearer-AuthLogin",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/x-protobuf": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{ver}/api-auth/logout": {
+      "post": {
+        "tags": [
+          "api-auth"
+        ],
+        "operationId": "Bearer-AuthLogout",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutDto"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutDto"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutDto"
+              }
+            },
+            "application/x-protobuf": {
+              "schema": {
+                "$ref": "#/components/schemas/LogoutDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{ver}/auth/logout": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "operationId": "AuthLogout",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{ver}/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "operationId": "AuthLogin",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/x-protobuf": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": { }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": { }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": { }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{ver}/auth/session": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "operationId": "AuthSession",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{ver}/complaint/{id}": {
+      "get": {
+        "tags": [
+          "complaint"
+        ],
+        "summary": "Complaint detail.",
+        "description": "Returns detail of a given complaint.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The complaint's unique ID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The complaint's unique ID.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and a complaint detail if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplaintExternalModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplaintExternalModel"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplaintExternalModel"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplaintExternalModel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "complaint"
+        ],
+        "summary": "Complaint detail.",
+        "description": "Returns detail of a given complaint.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The complaint's unique ID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The complaint's unique ID.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and a complaint detail if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplaintExternalModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplaintExternalModel"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplaintExternalModel"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComplaintExternalModel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      }
+    },
+    "/api/v{ver}/complaint": {
+      "get": {
+        "tags": [
+          "complaint"
+        ],
+        "summary": "Complaint list.",
+        "description": "Returns a list of your complaints matching the entered criteria.",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format.",
+            "schema": {
+              "type": "string",
+              "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format.",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format.",
+            "schema": {
+              "type": "string",
+              "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format.",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of addresses if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComplaintListExternalModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComplaintListExternalModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComplaintListExternalModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComplaintListExternalModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "complaint"
+        ],
+        "summary": "Complaint list.",
+        "description": "Returns a list of your complaints matching the entered criteria.",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format.",
+            "schema": {
+              "type": "string",
+              "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format.",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format.",
+            "schema": {
+              "type": "string",
+              "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format.",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of addresses if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComplaintListExternalModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComplaintListExternalModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComplaintListExternalModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComplaintListExternalModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      }
+    },
+    "/api/v{ver}/country-delivery/{countryCode}": {
+      "get": {
+        "tags": [
+          "country-delivery"
+        ],
+        "summary": "Deliveries in country.",
+        "description": "Returns deliveries allowed in a given country.",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "ISO 3166-1 alpha-2 country code.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "ISO 3166-1 alpha-2 country code.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of possible delivery ids.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDeliveryListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDeliveryListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDeliveryListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDeliveryListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "country-delivery"
+        ],
+        "summary": "Deliveries in country.",
+        "description": "Returns deliveries allowed in a given country.",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "ISO 3166-1 alpha-2 country code.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "ISO 3166-1 alpha-2 country code.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of possible delivery ids.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDeliveryListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDeliveryListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDeliveryListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDeliveryListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      }
+    },
+    "/api/v{ver}/delivery-method/{addressId}": {
+      "get": {
+        "tags": [
+          "delivery-method"
+        ],
+        "summary": "Delivery methods.",
+        "description": "Returns details about delivery methods available. Note that some delivery services may not be available to you in any country.",
+        "parameters": [
+          {
+            "name": "addressId",
+            "in": "path",
+            "description": "Id of the address you wish to deliver to",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "Id of the address you wish to deliver to",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of delivery methods if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "delivery-method"
+        ],
+        "summary": "Delivery methods.",
+        "description": "Returns details about delivery methods available. Note that some delivery services may not be available to you in any country.",
+        "parameters": [
+          {
+            "name": "addressId",
+            "in": "path",
+            "description": "Id of the address you wish to deliver to",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "Id of the address you wish to deliver to",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of delivery methods if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      }
+    },
+    "/api/v{ver}/delivery-payment": {
+      "get": {
+        "tags": [
+          "delivery-payment"
+        ],
+        "summary": "Payments for delivery.",
+        "description": "Returns available payment methods for specified delivery method.",
+        "parameters": [
+          {
+            "name": "deliveryId",
+            "in": "query",
+            "description": "The ID of the delivery method.",
+            "schema": {
+              "type": "integer",
+              "description": "The ID of the delivery method.",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of id pairs if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryPaymentListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryPaymentListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryPaymentListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryPaymentListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "delivery-payment"
+        ],
+        "summary": "Payments for delivery.",
+        "description": "Returns available payment methods for specified delivery method.",
+        "parameters": [
+          {
+            "name": "deliveryId",
+            "in": "query",
+            "description": "The ID of the delivery method.",
+            "schema": {
+              "type": "integer",
+              "description": "The ID of the delivery method.",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of id pairs if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryPaymentListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryPaymentListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryPaymentListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeliveryPaymentListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      }
+    },
+    "/api/v{ver}/invoice-delivery-type": {
+      "get": {
+        "tags": [
+          "invoice-delivery-type"
+        ],
+        "summary": "Invoice delivery types.",
+        "description": "Returns available methods of obtaining the invoice.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDeliveryTypeListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDeliveryTypeListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDeliveryTypeListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDeliveryTypeListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "invoice-delivery-type"
+        ],
+        "summary": "Invoice delivery types.",
+        "description": "Returns available methods of obtaining the invoice.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDeliveryTypeListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDeliveryTypeListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDeliveryTypeListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvoiceDeliveryTypeListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{ver}/order": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Order list.",
+        "description": "Returns list of orders matching the criteria.",
+        "parameters": [
+          {
+            "name": "fromDate",
+            "in": "query",
+            "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format. Only year and month are required, day and time is optional.",
+            "schema": {
+              "type": "string",
+              "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format. Only year and month are required, day and time is optional.",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format. Only year and month are required, day and time is optional.",
+            "schema": {
+              "type": "string",
+              "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format. Only year and month are required, day and time is optional.",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "customOrderId",
+            "in": "query",
+            "description": "Own custom order number, if you have entered any when placing the order.",
+            "schema": {
+              "type": "string",
+              "description": "Own custom order number, if you have entered any when placing the order.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "The unique order ID, staring with KT.",
+            "schema": {
+              "type": "string",
+              "description": "The unique order ID, staring with KT.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "shipToAddressId",
+            "in": "query",
+            "description": "The unique address ID the order was shipped to.",
+            "schema": {
+              "type": "string",
+              "description": "The unique address ID the order was shipped to.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "The unique ID of the order's status.",
+            "schema": {
+              "type": "integer",
+              "description": "The unique ID of the order's status.",
+              "format": "int64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "isCancelled",
+            "in": "query",
+            "description": "Whether the order was cancelled.",
+            "schema": {
+              "type": "boolean",
+              "description": "Whether the order was cancelled.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderListExternalModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderListExternalModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderListExternalModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderListExternalModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Order list.",
+        "description": "Returns list of orders matching the criteria.",
+        "parameters": [
+          {
+            "name": "fromDate",
+            "in": "query",
+            "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format. Only year and month are required, day and time is optional.",
+            "schema": {
+              "type": "string",
+              "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format. Only year and month are required, day and time is optional.",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format. Only year and month are required, day and time is optional.",
+            "schema": {
+              "type": "string",
+              "description": "YYYY-MM-DDTHH:MM:SS.mmmZ format. Only year and month are required, day and time is optional.",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "customOrderId",
+            "in": "query",
+            "description": "Own custom order number, if you have entered any when placing the order.",
+            "schema": {
+              "type": "string",
+              "description": "Own custom order number, if you have entered any when placing the order.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "The unique order ID, staring with KT.",
+            "schema": {
+              "type": "string",
+              "description": "The unique order ID, staring with KT.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "shipToAddressId",
+            "in": "query",
+            "description": "The unique address ID the order was shipped to.",
+            "schema": {
+              "type": "string",
+              "description": "The unique address ID the order was shipped to.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "The unique ID of the order's status.",
+            "schema": {
+              "type": "integer",
+              "description": "The unique ID of the order's status.",
+              "format": "int64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "isCancelled",
+            "in": "query",
+            "description": "Whether the order was cancelled.",
+            "schema": {
+              "type": "boolean",
+              "description": "Whether the order was cancelled.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderListExternalModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderListExternalModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderListExternalModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderListExternalModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Creates new order",
+        "description": "This action will create new cart ID (KTxx), add desired product, set desired settings and complete the order.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CartOrderRequestModel"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CartOrderRequestModel"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/CartOrderRequestModel"
+              }
+            },
+            "application/x-protobuf": {
+              "schema": {
+                "$ref": "#/components/schemas/CartOrderRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/B2BOrderResultModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/B2BOrderResultModel"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/B2BOrderResultModel"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/B2BOrderResultModel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{ver}/order/{id}": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Order detail.",
+        "description": "Returns detailed information about a specific order.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique order ID, staring with KT.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The unique order ID, staring with KT."
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderExternalModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderExternalModel"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderExternalModel"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderExternalModel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Order detail.",
+        "description": "Returns detailed information about a specific order.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique order ID, staring with KT.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The unique order ID, staring with KT."
+            }
+          },
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderExternalModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderExternalModel"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderExternalModel"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderExternalModel"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{ver}/payment-method": {
+      "get": {
+        "tags": [
+          "payment-method"
+        ],
+        "summary": "Payment methods.",
+        "description": "Returns all available payment methods, consult delivery-payment to see which are available for your delivery method of choice.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "payment-method"
+        ],
+        "summary": "Payment methods.",
+        "description": "Returns all available payment methods, consult delivery-payment to see which are available for your delivery method of choice.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentListModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentListModel"
+                  }
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentListModel"
+                  }
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentListModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "multipart/form-data": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/x-protobuf": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{ver}/product": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "List of products.",
+        "description": "Returns full list of products (nomenclatures) in portfolio, and detailed information about them.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of products if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "product"
+        ],
+        "summary": "List of products.",
+        "description": "Returns full list of products (nomenclatures) in portfolio, and detailed information about them.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTTP 200 and list of products if OK.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "HTTP 500 in a case of unexpected error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "HTTP 401 in a case of not being authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "426": {
+            "description": "HTTP 429 in a case of too many requests."
+          }
+        }
+      }
+    },
+    "/api/v{ver}/product/availabilities": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Stock availabilities.",
+        "description": "Returns the amount of individual products which are available in stock. Note: the browser is rendering the result for a very long time in Swagger UI, testing with other tools is recommended.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductAvailabilityExternalDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "PHP",
+            "label": "C#",
+            "source": "Console.WriteLine(\"Hello World\");"
+          },
+          {
+            "lang": "C#",
+            "label": "C#",
+            "source": "Console.WriteLine(\"Hello World\");"
+          }
+        ]
+      },
+      "head": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Stock availabilities.",
+        "description": "Returns the amount of individual products which are available in stock. Note: the browser is rendering the result for a very long time in Swagger UI, testing with other tools is recommended.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductAvailabilityExternalDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "PHP",
+            "label": "C#",
+            "source": "Console.WriteLine(\"Hello World\");"
+          },
+          {
+            "lang": "C#",
+            "label": "C#",
+            "source": "Console.WriteLine(\"Hello World\");"
+          }
+        ]
+      }
+    },
+    "/api/v{ver}/product/prices": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Product prices.",
+        "description": "Returns the amount of individual products which are available in stock. Note: the browser is rendering the result for a very long time in Swagger UI, testing with other tools is recommended.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductPriceExternalDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "PHP",
+            "label": "C#",
+            "source": "Console.WriteLine(\"Hello World\");"
+          },
+          {
+            "lang": "C#",
+            "label": "C#",
+            "source": "Console.WriteLine(\"Hello World\");"
+          }
+        ]
+      },
+      "head": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Product prices.",
+        "description": "Returns the amount of individual products which are available in stock. Note: the browser is rendering the result for a very long time in Swagger UI, testing with other tools is recommended.",
+        "parameters": [
+          {
+            "name": "ver",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductPriceExternalDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "PHP",
+            "label": "C#",
+            "source": "Console.WriteLine(\"Hello World\");"
+          },
+          {
+            "lang": "C#",
+            "label": "C#",
+            "source": "Console.WriteLine(\"Hello World\");"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddressListModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The unique ID of the address.",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Your own name of the address.",
+            "nullable": true
+          },
+          "recipientName": {
+            "type": "string",
+            "description": "Recipient's name on the shipping label.",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "description": "The street name and house number.",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "description": "The city name.",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "description": "The zip code.",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code.",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "description": "The recipient's contact number.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The recipient's contact email.",
+            "nullable": true
+          },
+          "poBox": {
+            "type": "string",
+            "description": "PO Box identification, if any.",
+            "nullable": true
+          },
+          "isValid": {
+            "type": "boolean",
+            "description": "Marks whether the address is valid and can be ordered to."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Address object"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "AddressCreateUpdateModel": {
+        "required": [
+          "city",
+          "countryCode",
+          "email",
+          "invoiceDeliveryId",
+          "name",
+          "phone",
+          "recipient",
+          "street",
+          "zipCode"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Your own naming of the address."
+          },
+          "shortName": {
+            "type": "string",
+            "description": "Your own shorthand naming of the address.",
+            "nullable": true
+          },
+          "recipient": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The recipient's name."
+          },
+          "street": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The street and house number."
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code."
+          },
+          "zipCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The zip code, source: https://www.geonames.org/."
+          },
+          "city": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The city name corresponding to the zipCode, source: https://www.geonames.org/."
+          },
+          "phone": {
+            "type": "string",
+            "description": "The contact phone in the +NNN-NNNNNNNNN format (or similar, as appropriate for your country).",
+            "format": "tel"
+          },
+          "fax": {
+            "type": "string",
+            "description": "The +NNN-NNNNNNNNN format (or similar, as appropriate for your country).",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The contact email address.",
+            "format": "email"
+          },
+          "invoiceDeliveryId": {
+            "type": "integer",
+            "description": "How the invoice is to be delivered - for more info see invoice-delivery-type.",
+            "format": "int64"
+          },
+          "isValid": {
+            "type": "boolean",
+            "description": "Marks whether the address is valid and can be ordered to."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Address create / update object"
+      },
+      "RefreshTokenDto": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDto": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LogoutDto": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComplainProductExternalModel": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Status of the product within the complaint.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Full name of the nomenclature (or product).",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "description": "Nomenclature code - 7 A-Z-0-9 characters referring to the commodity, color and size of the product (in case of the goods).",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description (note) which was entered when the complaint was filed. If none was entered, generated based off the content.",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "description": "The amount of pieces of the given nomenclature the complaint is filed for.",
+            "format": "double"
+          },
+          "unitExpectedPrice": {
+            "type": "number",
+            "description": "The price which was expected, contrary to which was charged. If the price is not the subject of the complaint, this value is 0.",
+            "format": "double"
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "The code of the currency the unitExpectedPrice is in. Empty if unitExpectedPrice is 0.",
+            "nullable": true
+          },
+          "isCanceled": {
+            "type": "boolean",
+            "description": "Whether the complaint was cancelled for this product."
+          },
+          "isReturn": {
+            "type": "boolean",
+            "description": "Whether the goods are being returned."
+          },
+          "type": {
+            "type": "string",
+            "description": "Name of the type of the complaint filed for this product.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComplainReturnCountryExternalModel": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The recipient company name on the goods return address.",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "description": "The street and number on the goods return address.",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "description": "The city name on the goods return address.",
+            "nullable": true
+          },
+          "countryName": {
+            "type": "string",
+            "description": "The country name on the goods return address.",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "description": "The zip code on the goods return address.",
+            "nullable": true
+          },
+          "recipient": {
+            "type": "string",
+            "description": "The recipient name on the goods return address.",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "description": "The contact number to obtain more information about your complaint.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The contact email to obtain more information about your complaint.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComplaintExternalModel": {
+        "type": "object",
+        "properties": {
+          "contractId": {
+            "type": "string",
+            "description": "The ID of the contract (order) the complaint has been filed for. Starting with KT.",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "description": "The date and time when the complaint was filed.",
+            "format": "date-time"
+          },
+          "note": {
+            "type": "string",
+            "description": "A brief summarization of the complaint, generated out of its contents, or entered manually by the user.",
+            "nullable": true
+          },
+          "isCancelled": {
+            "type": "boolean",
+            "description": "Whether the complaint was cancelled."
+          },
+          "complaintType": {
+            "type": "string",
+            "description": "Longer summarization of the complaint.",
+            "nullable": true
+          },
+          "complaintMainStatus": {
+            "type": "string",
+            "description": "The current status of the complaint - reflects whether the complaint was accepted or refused.",
+            "nullable": true
+          },
+          "statusName": {
+            "type": "string",
+            "description": "The current status of the complaint - reflects the status the complaint is in within the workflow.",
+            "nullable": true
+          },
+          "wayOfReturnGoods": {
+            "type": "string",
+            "description": "The way in which the goods are to be returned.",
+            "nullable": true
+          },
+          "customerInstruction": {
+            "type": "string",
+            "description": "The preferred way of resolving the complaint.",
+            "nullable": true
+          },
+          "hasReturns": {
+            "type": "boolean",
+            "description": "Whether there are any goods to be returned."
+          },
+          "isPickupCreated": {
+            "type": "boolean",
+            "description": "Whether there was transport (pick-up service) already created. For doing so, use the e-shop."
+          },
+          "isWithPickup": {
+            "type": "boolean",
+            "description": "Whether there is a transport (pick-up service) ."
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComplainProductExternalModel"
+            },
+            "description": "All products and information about them in the complaint.",
+            "nullable": true
+          },
+          "returnAddress": {
+            "$ref": "#/components/schemas/ComplainReturnCountryExternalModel"
+          },
+          "id": {
+            "type": "string",
+            "description": "The complaint's unique ID.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComplaintListExternalModel": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date and time the complaint was filed in.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique ID of the complaint.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the complaint (generated out of its contents).",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the complaint.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description (note) which was entered when the complaint was filed. If none was entered, generated based off the type.",
+            "nullable": true
+          },
+          "isCancelled": {
+            "type": "boolean",
+            "description": "Whether the complaint was cancelled."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CountryDeliveryListModel": {
+        "type": "object",
+        "properties": {
+          "deliveryId": {
+            "type": "integer",
+            "description": "The unique ID of the delivery allowed on the given country. Check for more in delivery-method.",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeliveryListModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The unique ID of the delivery method.",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string",
+            "description": "Shorthand code of the delivery method.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The full name of the delivery method.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeliveryPaymentListModel": {
+        "type": "object",
+        "properties": {
+          "deliveryId": {
+            "type": "integer",
+            "description": "The ID of the delivery method.",
+            "format": "int64"
+          },
+          "paymentId": {
+            "type": "integer",
+            "description": "The ID of an allowed payment method.",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceDeliveryTypeListModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The unique invoice delivery type ID.",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "The full name of the invoice delivery type.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderListExternalModel": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "string",
+            "description": "The unique order ID, staring with KT.",
+            "nullable": true
+          },
+          "addressId": {
+            "type": "integer",
+            "description": "The unique address ID the order was shipped to.",
+            "format": "int64"
+          },
+          "addressName": {
+            "type": "string",
+            "description": "The name of the address the order was shipped to.",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "description": "The unique ID of the order's status.",
+            "nullable": true
+          },
+          "payment": {
+            "type": "string",
+            "description": "The order's payment method's name.",
+            "nullable": true
+          },
+          "customOrderId": {
+            "type": "string",
+            "description": "Own custom order number, if you have entered any when placing the order.",
+            "nullable": true
+          },
+          "delivery": {
+            "type": "string",
+            "description": "The order's delivery method's name.",
+            "nullable": true
+          },
+          "requiredDeliveryDate": {
+            "type": "string",
+            "description": "The due date of the delivery.",
+            "format": "date-time"
+          },
+          "isCancelled": {
+            "type": "boolean",
+            "description": "Whether the order was cancelled."
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntPtr": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "CartOrderProductModel": {
+        "required": [
+          "count",
+          "productSizeCode"
+        ],
+        "type": "object",
+        "properties": {
+          "productSizeCode": {
+            "type": "string",
+            "description": "Nomenclature code - 7 A-Z-0-9 characters referring to the commodity, color and size of the product (in case of the goods)."
+          },
+          "count": {
+            "type": "integer",
+            "description": "Amount of pieces.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CartOrderRequestModel": {
+        "required": [
+          "addressId",
+          "deliveryId",
+          "invoiceDeliveryTypeId",
+          "paymentId",
+          "products"
+        ],
+        "type": "object",
+        "properties": {
+          "invoiceDeliveryTypeId": {
+            "type": "integer",
+            "description": "ID of the invoice delivery method used.",
+            "format": "int64"
+          },
+          "addressId": {
+            "type": "integer",
+            "description": "ID of the address - the address has to be created prior to the order, and has to be valid.",
+            "format": "int64"
+          },
+          "deliveryId": {
+            "type": "integer",
+            "description": "ID of the delivery method - the delivery method has to be available for the given address.",
+            "format": "int64"
+          },
+          "paymentId": {
+            "type": "integer",
+            "description": "ID of the payment method - the payment method has to be compatible with the delivery method.",
+            "format": "int64"
+          },
+          "deliveryDate": {
+            "type": "string",
+            "description": "The date when the goods are to arrive. If not entered, the closest one available will be chosen.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "customOrderId": {
+            "type": "string",
+            "description": "Your own custom name or ID for the order.",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "description": "Additional note for the customer service. Entering it may delay the expedition process.",
+            "nullable": true
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CartOrderProductModel"
+            },
+            "description": "Contains information about items within the order."
+          }
+        },
+        "additionalProperties": false
+      },
+      "B2BOrderResultModel": {
+        "type": "object",
+        "properties": {
+          "orderCode": {
+            "type": "string",
+            "description": "The code of the newly created order.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderDeliveryItemExternalModel": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "description": "Amount of pieces.",
+            "format": "double"
+          },
+          "shippedAmount": {
+            "type": "number",
+            "description": "The amount of pieces which was actually shipped.",
+            "format": "double"
+          },
+          "displayOrder": {
+            "type": "integer",
+            "description": "Display order on the order.",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "Full name of the item.",
+            "nullable": true
+          },
+          "netPrice": {
+            "type": "number",
+            "description": "Total net price of the items.",
+            "format": "double"
+          },
+          "nomenclatureCode": {
+            "type": "string",
+            "description": "Nomenclature code - 7 A-Z-0-9 characters referring to the commodity, color and size of the product (in case of the goods).",
+            "nullable": true
+          },
+          "nomenclatureId": {
+            "type": "string",
+            "description": "Internal unique ID of the nomenclature.",
+            "nullable": true
+          },
+          "unitNetPrice": {
+            "type": "number",
+            "description": "Net price of a single item.",
+            "format": "double"
+          },
+          "orderRevision": {
+            "type": "integer",
+            "description": "ID of the order's revision the item was added in.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderDeliveryExternalModel": {
+        "type": "object",
+        "properties": {
+          "addressCity": {
+            "type": "string",
+            "description": "The city name on the address.",
+            "nullable": true
+          },
+          "addressCountry": {
+            "type": "string",
+            "description": "The country on the address.",
+            "nullable": true
+          },
+          "addressName": {
+            "type": "string",
+            "description": "Your name of the address.",
+            "nullable": true
+          },
+          "addressRecipient": {
+            "type": "string",
+            "description": "The recipient's name on the address.",
+            "nullable": true
+          },
+          "addressStreet": {
+            "type": "string",
+            "description": "The street name and house number.",
+            "nullable": true
+          },
+          "addressZipCode": {
+            "type": "string",
+            "description": "The zip code.",
+            "nullable": true
+          },
+          "addressPhone": {
+            "type": "string",
+            "description": "The recipient's contact phone.",
+            "nullable": true
+          },
+          "addressEmail": {
+            "type": "string",
+            "description": "The recipient's contact email.",
+            "nullable": true
+          },
+          "customerBankAccountNumber": {
+            "type": "string",
+            "description": "The bank account number for the payment from your customer to be sent to. Used if you have used direct to your customer service combined with cash on delivery.",
+            "nullable": true
+          },
+          "customerBankCode": {
+            "type": "string",
+            "description": "The bank account code for the payment from your customer  to be sent to. Used if you have used direct to your customer service combined with cash on delivery.",
+            "nullable": true
+          },
+          "customerVariableSymbol": {
+            "type": "string",
+            "description": "The variable symbol for the payment from your customer  to be sent with. Used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "isCashOnDelivery": {
+            "type": "boolean",
+            "description": "Whether there is cash on delivery to be paid."
+          },
+          "cashOnDeliveryPrice": {
+            "type": "number",
+            "description": "Price to be paid on delivery, if cash on delivery payment method was used.",
+            "format": "double"
+          },
+          "confirmedRevision": {
+            "type": "integer",
+            "description": "The number of order's revision the delivery is part of.",
+            "format": "int32"
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "The code of the currency for the payment.",
+            "nullable": true
+          },
+          "customerAddressCity": {
+            "type": "string",
+            "description": "The city name on the address, used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "customerAddressCountry": {
+            "type": "string",
+            "description": "The country on the address, used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "customerAddressName": {
+            "type": "string",
+            "description": "Your name of the address, used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "customerAddressRecipient": {
+            "type": "string",
+            "description": "The recipient's name on the address, used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "customerAddressStreet": {
+            "type": "string",
+            "description": "The street name and house number, used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "customerAddressZipCode": {
+            "type": "string",
+            "description": "The zip code, used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "customerEmail": {
+            "type": "string",
+            "description": "The customer's contact email, used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "customerPhone": {
+            "type": "string",
+            "description": "The customer's contact phone number, used if you have used direct to your customer service.",
+            "nullable": true
+          },
+          "customerAttachInvoice": {
+            "type": "boolean",
+            "description": "Whether your own invoice is to be added into the package before shipping, used if you have used direct to your customer service."
+          },
+          "customerIsOwnAddress": {
+            "type": "boolean",
+            "description": "Whether the return address on the shipping label is to be our warehouse address, or the delivery address you chose for the order. Used if you have used direct to your customer service."
+          },
+          "delivery": {
+            "type": "string",
+            "description": "The delivery method's name.",
+            "nullable": true
+          },
+          "despatchDate": {
+            "type": "string",
+            "description": "The date when the order is to be despatched.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isCustomer": {
+            "type": "boolean",
+            "description": "Whether the direct to your customer service was used."
+          },
+          "deliveryStatus": {
+            "type": "string",
+            "description": "The status name of the delivery.",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderDeliveryItemExternalModel"
+            },
+            "description": "Contains information about items within the order.",
+            "nullable": true
+          },
+          "orderDeliveryRevision": {
+            "type": "integer",
+            "description": "The id of the revision the delivery is part of.",
+            "format": "int32"
+          },
+          "netPrice": {
+            "type": "number",
+            "description": "The total price, without VAT applied.",
+            "format": "double"
+          },
+          "price": {
+            "type": "number",
+            "description": "The total price, with VAT applied.",
+            "format": "double"
+          },
+          "requiredDeliveryDate": {
+            "type": "string",
+            "description": "The required delivery date of the order.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "taxationType": {
+            "type": "string",
+            "description": "Indicates, whether VAT is to be applied.",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique ID of the given delivery within the order.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderExternalModel": {
+        "type": "object",
+        "properties": {
+          "confirmDate": {
+            "type": "string",
+            "description": "Date and time when the order was confirmed (placed).",
+            "format": "date-time",
+            "nullable": true
+          },
+          "confirmedBy": {
+            "type": "string",
+            "description": "Username of the customer service employee who confirmed the last contract's revision.",
+            "nullable": true
+          },
+          "confirmedRevision": {
+            "type": "integer",
+            "description": "ID of the current order's revision. Only the newest one is being returned.",
+            "format": "int32"
+          },
+          "note": {
+            "type": "string",
+            "description": "Additional note for the customer service.",
+            "nullable": true
+          },
+          "delivery": {
+            "type": "string",
+            "description": "Name of the delivery method used.",
+            "nullable": true
+          },
+          "invoiceDeliveryType": {
+            "type": "string",
+            "description": "Name of the invoice delivery method used.",
+            "nullable": true
+          },
+          "customOrderId": {
+            "type": "string",
+            "description": "Your own custom name or ID for the order.",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "description": "Name of the current status the order is in.",
+            "nullable": true
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "Name of the payment method used.",
+            "nullable": true
+          },
+          "paymentMethodCode": {
+            "type": "string",
+            "description": "Shorthand code of the payment method. used.",
+            "nullable": true
+          },
+          "deliveries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderDeliveryExternalModel"
+            },
+            "description": "Contains information about individual deliveries within the order.",
+            "nullable": true
+          },
+          "orderCode": {
+            "type": "string",
+            "description": "The unique order ID, staring with KT.",
+            "nullable": true
+          },
+          "deliveryDateFirst": {
+            "type": "string",
+            "description": "The first delivery date within the order.",
+            "format": "date-time"
+          },
+          "deliveryDateLast": {
+            "type": "string",
+            "description": "The last delivery date within the order (same as the first one if only 1 was used).",
+            "format": "date-time"
+          },
+          "netPrice": {
+            "type": "number",
+            "description": "The price of the order, without VAT applied.",
+            "format": "double"
+          },
+          "isPaymentDone": {
+            "type": "boolean",
+            "description": "Whether the order was already paid for."
+          },
+          "unpaidAmount": {
+            "type": "number",
+            "description": "The remaining amount to be paid for the order. Note that for actually processing the payment, you currently need to use the e-shop.",
+            "format": "double"
+          },
+          "price": {
+            "type": "number",
+            "description": "The final price of the order, with VAT applied.",
+            "format": "double"
+          },
+          "unpaidAmountCurrencyCode": {
+            "type": "string",
+            "description": "The currency code for the payment.",
+            "nullable": true
+          },
+          "isCanceled": {
+            "type": "boolean",
+            "description": "Whether the order was cancelled."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentListModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The ID of the payment method.",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string",
+            "description": "Shorthand code.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Full name.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductAlternativeModel": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The alternative product's code.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "The alternative's title.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductAttributeModel": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The additional attribute's name.",
+            "nullable": true
+          },
+          "text": {
+            "type": "string",
+            "description": "The additional attribute's value.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductImageModel": {
+        "type": "object",
+        "properties": {
+          "viewCode": {
+            "type": "string",
+            "description": "A-Z single letter view code of the product image.",
+            "nullable": true
+          },
+          "link": {
+            "type": "string",
+            "description": "The image URL.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductSizeModel": {
+        "type": "object",
+        "properties": {
+          "productSizeCode": {
+            "type": "string",
+            "description": "The nomenclature code.",
+            "nullable": true
+          },
+          "ean": {
+            "type": "string",
+            "description": "EAN code of the item.",
+            "nullable": true
+          },
+          "sizeName": {
+            "type": "string",
+            "description": "The nomenclature's size's visual name.",
+            "nullable": true
+          },
+          "expeditionQuantity": {
+            "type": "integer",
+            "description": "The minimum amount for expedition to be allowed.",
+            "format": "int32"
+          },
+          "size": {
+            "type": "string",
+            "description": "The nomenclature's size code.",
+            "nullable": true
+          },
+          "boxDepth": {
+            "type": "number",
+            "description": "The depth (in cm) of a full wrap package",
+            "format": "double"
+          },
+          "boxHeight": {
+            "type": "number",
+            "description": "The height (in cm) of a full wrap package",
+            "format": "double"
+          },
+          "boxWidth": {
+            "type": "number",
+            "description": "The width (in cm) of a full wrap package",
+            "format": "double"
+          },
+          "boxCapacity": {
+            "type": "number",
+            "description": "The capacity (in pieces) of a full wrap package",
+            "format": "double"
+          },
+          "netWeight": {
+            "type": "number",
+            "description": "The net weight (in kg) of a single piece of the product",
+            "format": "double"
+          },
+          "grossWeight": {
+            "type": "number",
+            "description": "The gross weight (in kg) of a single piece of the product",
+            "format": "double"
+          },
+          "tariffNomenclature": {
+            "type": "string",
+            "description": "The traffic nomenclature ID",
+            "nullable": true
+          },
+          "volume": {
+            "type": "number",
+            "description": "Volume (in litres) of a single piece",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductVariantModel": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The variant's unique code (part of the product's nomenclature).",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The variant's visual name.",
+            "nullable": true
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductAttributeModel"
+            },
+            "description": "Additional parameters related to the product variant.",
+            "nullable": true
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductImageModel"
+            },
+            "description": "Contains images of the product variant.",
+            "nullable": true
+          },
+          "nomenclatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductSizeModel"
+            },
+            "description": "The individual nomenclatures (or subvariants) under the product.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductModel": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The 3-character alphanumeric code of the product.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The product's name.",
+            "nullable": true
+          },
+          "categoryName": {
+            "type": "string",
+            "description": "The name of the category the product belongs to.",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "description": "The product's gender (or width in case of boots).",
+            "nullable": true
+          },
+          "trademark": {
+            "type": "string",
+            "description": "The product's trademark.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The product's type.",
+            "nullable": true
+          },
+          "subtitle": {
+            "type": "string",
+            "description": "The product's subtitle on the e-shop.",
+            "nullable": true
+          },
+          "specification": {
+            "type": "string",
+            "description": "The product's summary/specification.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The product's additional description.",
+            "nullable": true
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductAlternativeModel"
+            },
+            "description": "The alternatives to this product (different genders).",
+            "nullable": true
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductVariantModel"
+            },
+            "description": "The variants the product is available in (for example colors).",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Product object"
+      },
+      "ProductAvailabilityExternalDto": {
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "type": "integer",
+            "description": "Amount in stock.",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "description": "Date of the stock amount. There may be several different dates and associated quantities for 1 given productSizeCode, representing more goods being on the way to the warehouse.",
+            "format": "date-time"
+          },
+          "productSizeCode": {
+            "type": "string",
+            "description": "Nomenclature code - 7 A-Z-0-9 characters referring to the commodity, color and size of the product (in case of the goods).",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductPriceExternalDto": {
+        "type": "object",
+        "properties": {
+          "productSizeCode": {
+            "type": "string",
+            "description": "Nomenclature code - 7 A-Z-0-9 characters referring to the commodity, color and size of the product.",
+            "nullable": true
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Minimum amount of pieces which need to be ordered for this price to apply. Note that this quantity discount may stack up with other products with the same price, within the same commodity.",
+            "format": "int32"
+          },
+          "price": {
+            "type": "number",
+            "description": "The price value.",
+            "format": "double"
+          },
+          "currency": {
+            "type": "string",
+            "description": "The currency the price is in.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Cookie": {
+        "type": "apiKey",
+        "description": "Authorization in session using Cookie scheme",
+        "name": ".AspNetCore.Cookies",
+        "in": "cookie"
+      },
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Cookie": [ ]
+    },
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
